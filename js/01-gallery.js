@@ -29,13 +29,15 @@ function handleClick(event) {
     <img src="${imgItem}"/>
 `);
 
-    instance.show()
+  instance.show()
+  
+  document.addEventListener("keydown", handleKeyPress);
 };
 
-document.addEventListener("keydown", handleKeyPress);
 
 function handleKeyPress(event) {
     if (event.key === "Escape") {
       instance.close(); 
+      document.removeEventListener("keydown", handleKeyPress);
     }
 };
