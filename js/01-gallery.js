@@ -24,22 +24,18 @@ function handleClick(event) {
     if (!event.target.classList.contains("gallery__image")) {
         return;
     }
-    const imageUrl = event.target.getAttribute("data-source");
+    const imgItem = event.target.getAttribute("data-source");
      instance = basicLightbox.create(`
-    <img src="${imageUrl}"/>
+    <img src="${imgItem}"/>
 `);
 
     instance.show()
-    
 };
 
 document.addEventListener("keydown", handleKeyPress);
 
 function handleKeyPress(event) {
     if (event.key === "Escape") {
-      instance.close();
-        
+      instance.close(); 
     }
 };
-
-console.log(galleryItems);
